@@ -1,6 +1,7 @@
 // ignore_for_file:  non_constant_identifier_names
 
 import 'package:equatable/equatable.dart';
+import 'package:proklinik_models/models/user_preferences.dart';
 
 class UserModel extends Equatable {
   final String id;
@@ -11,6 +12,7 @@ class UserModel extends Equatable {
   final String? password;
   final int synd_id;
   final String? fcm_token;
+  final UserPreferences? preferences;
 
   const UserModel({
     required this.id,
@@ -21,6 +23,7 @@ class UserModel extends Equatable {
     required this.phone,
     required this.synd_id,
     this.fcm_token,
+    this.preferences,
   });
 
   @override
@@ -34,18 +37,21 @@ class UserModel extends Equatable {
       phone,
       synd_id,
       fcm_token,
+      preferences,
     ];
   }
 
-  UserModel copyWith(
-      {String? id,
-      String? username,
-      String? email,
-      String? service,
-      String? password,
-      String? phone,
-      int? synd_id,
-      String? fcm_token}) {
+  UserModel copyWith({
+    String? id,
+    String? username,
+    String? email,
+    String? service,
+    String? password,
+    String? phone,
+    int? synd_id,
+    String? fcm_token,
+    UserPreferences? preferences,
+  }) {
     return UserModel(
       id: id ?? this.id,
       username: username ?? this.username,
@@ -55,6 +61,7 @@ class UserModel extends Equatable {
       phone: phone ?? this.phone,
       synd_id: synd_id ?? this.synd_id,
       fcm_token: fcm_token ?? this.fcm_token,
+      preferences: preferences ?? this.preferences,
     );
   }
 
@@ -69,6 +76,7 @@ class UserModel extends Equatable {
       'password': password,
       'passwordConfirm': password,
       'fcm_token': fcm_token,
+      'preferences': preferences?.toJson(),
     };
   }
 
@@ -82,6 +90,7 @@ class UserModel extends Equatable {
       'password': password,
       'passwordConfirm': password,
       'fcm_token': fcm_token,
+      'preferences': preferences?.toJson(),
     };
   }
 
@@ -95,6 +104,10 @@ class UserModel extends Equatable {
       password: map['password'] as String?,
       synd_id: map['synd_id'] as int,
       fcm_token: map['fcm_token'] as String?,
+      preferences: map['preferences'] == null
+          ? null
+          : UserPreferences.fromJson(
+              map['preferences'] as Map<String, dynamic>),
     );
   }
 
