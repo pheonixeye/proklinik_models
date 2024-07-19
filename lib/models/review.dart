@@ -1,11 +1,9 @@
 // ignore_for_file:  non_constant_identifier_names
 
 import 'package:equatable/equatable.dart';
-// ignore: depend_on_referenced_packages
+import 'package:proklinik_models/models/base_notification_data.dart';
 
-class Review extends Equatable {
-  //todo: add doc_rel
-  //todo: add clinic_rel
+class Review extends BaseNotificationData with EquatableMixin {
   final String id;
   final String doc_id;
   final String user_name;

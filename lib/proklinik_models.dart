@@ -1,5 +1,6 @@
 library proklinik_models;
 
+export 'package:proklinik_models/models/base_notification_data.dart';
 export 'package:proklinik_models/models/booking_data.dart';
 export 'package:proklinik_models/models/booking_status.dart';
 export 'package:proklinik_models/models/city.dart';
@@ -14,6 +15,7 @@ export 'package:proklinik_models/models/governorates.dart';
 export 'package:proklinik_models/models/invoice_mail.dart';
 export 'package:proklinik_models/models/invoice.dart';
 export 'package:proklinik_models/models/med_article.dart';
+export 'package:proklinik_models/models/news_model.dart';
 export 'package:proklinik_models/models/query_object.dart';
 export 'package:proklinik_models/models/review.dart';
 export 'package:proklinik_models/models/schedule.dart';

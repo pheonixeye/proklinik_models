@@ -1,8 +1,9 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:equatable/equatable.dart';
+import 'package:proklinik_models/models/base_notification_data.dart';
 
-class Invoice extends Equatable {
+class Invoice extends BaseNotificationData with EquatableMixin {
   final String id;
   final String doc_id;
   final String issued_at;

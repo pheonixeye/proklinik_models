@@ -1,10 +1,11 @@
 // ignore_for_file:  non_constant_identifier_names, constant_identifier_names
 
 import 'package:equatable/equatable.dart';
+import 'package:proklinik_models/models/base_notification_data.dart';
 import 'package:proklinik_models/models/booking_status.dart';
 import 'package:proklinik_models/models/server_response_model.dart';
 
-class BookingData extends Equatable {
+class BookingData extends BaseNotificationData with EquatableMixin {
   final String id;
   final String user_name;
   final String user_phone;

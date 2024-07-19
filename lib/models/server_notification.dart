@@ -32,16 +32,20 @@ class ServerNotification {
 enum NotificationType {
   newBooking('new_booking'),
   newInvoice('new_invoice'),
+  newNews('new_news'),
+  newReview('new_review'),
   unknown('unknown');
 
   final String value;
 
   const NotificationType(this.value);
 
-  factory NotificationType.fromString(String value) {
+  factory NotificationType.fromString(String? value) {
     return switch (value) {
       'new_booking' => NotificationType.newBooking,
       'new_invoice' => NotificationType.newInvoice,
+      'new_news' => NotificationType.newNews,
+      'new_review' => NotificationType.newReview,
       _ => NotificationType.unknown,
     };
   }
