@@ -1,7 +1,7 @@
 name: proklinik_models
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/pheonixeye/proklinik_models.git
 
 environment:
   sdk: ^3.4.3
