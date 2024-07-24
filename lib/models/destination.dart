@@ -10,8 +10,8 @@ class Destination extends Equatable {
   final String areaAr;
   final String addressEn;
   final String addressAr;
-  final double lon;
-  final double lat;
+  final num lon;
+  final num lat;
 
   const Destination({
     required this.id,
@@ -33,8 +33,8 @@ class Destination extends Equatable {
     String? areaAr,
     String? addressEn,
     String? addressAr,
-    double? lon,
-    double? lat,
+    num? lon,
+    num? lat,
   }) {
     return Destination(
       id: id ?? this.id,
@@ -78,8 +78,8 @@ class Destination extends Equatable {
       areaAr: map['areaAr'] as String,
       addressEn: map['addressEn'] as String,
       addressAr: map['addressAr'] as String,
-      lon: map["lon"] as double,
-      lat: map["lat"] as double,
+      lon: map["lon"] as num,
+      lat: map["lat"] as num,
     );
   }
 

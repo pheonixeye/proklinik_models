@@ -20,9 +20,9 @@ class Doctor extends Equatable {
   final String about_ar;
   final String degree_en;
   final String degree_ar;
-  final double rating;
+  final num rating;
   final List<String> tags;
-  final int views;
+  final num views;
   final List<Destination> destinations;
   final String? avatar;
 
@@ -144,9 +144,9 @@ class Doctor extends Equatable {
       about_ar: map['about_ar'] as String,
       degree_en: map['degree_en'] as String,
       degree_ar: map['degree_ar'] as String,
-      rating: map['rating'],
+      rating: map['rating'] as num,
       tags: List<String>.from((map['tags'] as List<dynamic>? ?? [])),
-      views: map['views'],
+      views: map['views'] as num,
       destinations: (map['destinations'] as List)
           .map((e) => Destination.fromJson(e))
           .toList(),

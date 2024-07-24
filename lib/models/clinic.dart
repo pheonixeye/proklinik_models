@@ -64,8 +64,8 @@ class Clinic extends Equatable {
     String? city_ar,
     String? address_en,
     String? address_ar,
-    double? lon,
-    double? lat,
+    num? lon,
+    num? lat,
     List<Schedule>? schedule,
   }) {
     return Clinic(

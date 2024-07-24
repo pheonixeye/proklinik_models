@@ -138,7 +138,7 @@ class BookingData extends BaseNotificationData with EquatableMixin {
       'clinic_id': clinic_id,
       'date_time': date_time,
       'type': type,
-      "attended": attended,
+      'attended': attended,
       'year': year,
       'month': month,
       'day': day,
@@ -151,14 +151,32 @@ class BookingData extends BaseNotificationData with EquatableMixin {
       id: map['id'] as String,
       user_name: map['user_name'] as String,
       user_phone: map['user_phone'] as String,
-      user_email:
-          map['user_email'] != null ? map['user_email'] as String : null,
+      user_email: map['user_email'] as String?,
       doc_id: map['doc_id'] as String,
       clinic_id: map['clinic_id'] as String,
       date_time: map['date_time'] as String,
       model: map['model'] == null
           ? null
           : ServerResponseModel.fromJson(map['model']) as ServerResponseModel?,
+      type: map['type'] as String?,
+      attended: map['attended'] as bool,
+      year: map['year'] as int,
+      month: map['month'] as int,
+      day: map['day'] as int,
+      status: Status.fromString(map['status'] as String?),
+    );
+  }
+
+  factory BookingData.fromFrogBody(Map<String, dynamic> map) {
+    print('BookingData.fromFrogBody($map)');
+    return BookingData(
+      id: '',
+      user_name: map['user_name'] as String,
+      user_phone: map['user_phone'] as String,
+      user_email: map['user_email'] as String?,
+      doc_id: map['doc_id'] as String,
+      clinic_id: map['clinic_id'] as String,
+      date_time: map['date_time'] as String,
       type: map['type'] as String?,
       attended: map['attended'] as bool,
       year: map['year'] as int,
@@ -176,8 +194,7 @@ class BookingData extends BaseNotificationData with EquatableMixin {
       id: map['id'] as String,
       user_name: map['user_name'] as String,
       user_phone: map['user_phone'] as String,
-      user_email:
-          map['user_email'] != null ? map['user_email'] as String : null,
+      user_email: map['user_email'] as String?,
       doc_id: map['doc_id'] as String,
       clinic_id: map['clinic_id'] as String,
       date_time: map['date_time'] as String,
