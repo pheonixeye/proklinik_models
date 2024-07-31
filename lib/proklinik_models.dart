@@ -5,6 +5,7 @@ export 'package:proklinik_models/models/booking_data.dart';
 export 'package:proklinik_models/models/booking_status.dart';
 export 'package:proklinik_models/models/city.dart';
 export 'package:proklinik_models/models/clinic.dart';
+export 'package:proklinik_models/models/clinic_shift.dart';
 export 'package:proklinik_models/models/contact_us_model.dart';
 export 'package:proklinik_models/models/degree.dart';
 export 'package:proklinik_models/models/destination.dart';
