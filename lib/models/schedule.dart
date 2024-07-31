@@ -1,49 +1,37 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
+import 'package:proklinik_models/models/clinic_shift.dart';
 import 'package:proklinik_models/models/weekdays.dart';
 
 class Schedule extends Equatable {
-  //todo: add available
   final String id;
   final String weekday;
   final int intday;
-  final int startMin;
-  final int startHour;
-  final int endMin;
-  final int endHour;
   final bool available;
+  final List<ClinicShift> shifts;
 
   const Schedule({
     required this.id,
     required this.weekday,
     required this.intday,
-    required this.startMin,
-    required this.startHour,
-    required this.endMin,
-    required this.endHour,
     required this.available,
+    required this.shifts,
   });
 
   Schedule copyWith({
     String? id,
     String? weekday,
     int? intday,
-    int? startMin,
-    int? startHour,
-    int? endMin,
-    int? endHour,
     bool? available,
+    List<ClinicShift>? shifts,
   }) {
     return Schedule(
       id: id ?? this.id,
       weekday: weekday ?? this.weekday,
       intday: intday ?? this.intday,
-      startMin: startMin ?? this.startMin,
-      startHour: startHour ?? this.startHour,
-      endMin: endMin ?? this.endMin,
-      endHour: endHour ?? this.endHour,
       available: available ?? this.available,
+      shifts: shifts ?? this.shifts,
     );
   }
 
@@ -52,11 +40,8 @@ class Schedule extends Equatable {
       '_id': id,
       'weekday': weekday,
       'intday': intday,
-      'startMin': startMin,
-      'startHour': startHour,
-      'endMin': endMin,
-      'endHour': endHour,
       'available': available,
+      'shifts': shifts.map((e) => e.toJson()).toList()
     };
   }
 
@@ -70,11 +55,10 @@ class Schedule extends Equatable {
       id: map['_id'] as String,
       weekday: map['weekday'] as String,
       intday: map['intday'] as int,
-      startMin: map['startMin'] as int,
-      startHour: map['startHour'] as int,
-      endMin: map['endMin'] as int,
-      endHour: map['endHour'] as int,
       available: map['available'] as bool,
+      shifts: (map['shifts'] as List<dynamic>)
+          .map((e) => ClinicShift.fromJson(e))
+          .toList(),
     );
   }
 
@@ -87,11 +71,8 @@ class Schedule extends Equatable {
       id,
       weekday,
       intday,
-      startMin,
-      startHour,
-      endMin,
-      endHour,
       available,
+      shifts,
     ];
   }
 
@@ -101,11 +82,8 @@ class Schedule extends Equatable {
         id: "${e.key}",
         weekday: e.value.en,
         intday: e.value.d,
-        startMin: 0,
-        startHour: 0,
-        endMin: 0,
-        endHour: 0,
         available: false,
+        shifts: [],
       ),
     ),
   ];
@@ -115,11 +93,8 @@ class Schedule extends Equatable {
       id: "1",
       weekday: "Monday",
       intday: 1,
-      startMin: 0,
-      startHour: 0,
-      endMin: 0,
-      endHour: 0,
       available: false,
+      shifts: [],
     );
   }
 }
