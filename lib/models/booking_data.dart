@@ -19,6 +19,10 @@ class BookingData extends BaseNotificationData with EquatableMixin {
   final int year;
   final int month;
   final int day;
+  final num startH;
+  final num startM;
+  final num endH;
+  final num endM;
   final Status? status;
 
   const BookingData({
@@ -35,6 +39,10 @@ class BookingData extends BaseNotificationData with EquatableMixin {
     required this.year,
     required this.month,
     required this.day,
+    required this.startH,
+    required this.startM,
+    required this.endH,
+    required this.endM,
     this.status,
   });
 
@@ -53,6 +61,10 @@ class BookingData extends BaseNotificationData with EquatableMixin {
       year: DateTime.now().year,
       month: DateTime.now().month,
       day: DateTime.now().day,
+      startH: 0,
+      startM: 0,
+      endH: 0,
+      endM: 0,
       status: Status.attended,
     );
   }
@@ -73,6 +85,10 @@ class BookingData extends BaseNotificationData with EquatableMixin {
       month: DateTime.now().month,
       day: DateTime.now().day,
       status: value.status,
+      startH: value.startH,
+      startM: value.startM,
+      endH: value.endH,
+      endM: value.endM,
     );
   }
 
@@ -91,6 +107,10 @@ class BookingData extends BaseNotificationData with EquatableMixin {
     int? day,
     int? month,
     int? year,
+    num? startH,
+    num? startM,
+    num? endH,
+    num? endM,
   }) {
     return BookingData(
       id: id ?? this.id,
@@ -107,6 +127,10 @@ class BookingData extends BaseNotificationData with EquatableMixin {
       month: month ?? this.month,
       day: day ?? this.day,
       status: status ?? this.status,
+      startH: startH ?? this.startH,
+      startM: startM ?? this.startM,
+      endH: endH ?? this.endH,
+      endM: endM ?? this.endM,
     );
   }
 
@@ -126,6 +150,10 @@ class BookingData extends BaseNotificationData with EquatableMixin {
       'month': month,
       'day': day,
       'status': status?.value,
+      'startH': startH,
+      'startM': startM,
+      'endH': endH,
+      'endM': endM,
     };
   }
 
@@ -143,6 +171,10 @@ class BookingData extends BaseNotificationData with EquatableMixin {
       'month': month,
       'day': day,
       'status': status?.value,
+      'startH': startH,
+      'startM': startM,
+      'endH': endH,
+      'endM': endM,
     };
   }
 
@@ -164,6 +196,10 @@ class BookingData extends BaseNotificationData with EquatableMixin {
       month: map['month'] as int,
       day: map['day'] as int,
       status: Status.fromString(map['status'] as String?),
+      startH: map['startH'] as num,
+      startM: map['startM'] as num,
+      endH: map['endH'] as num,
+      endM: map['endM'] as num,
     );
   }
 
@@ -183,6 +219,10 @@ class BookingData extends BaseNotificationData with EquatableMixin {
       month: map['month'] as int,
       day: map['day'] as int,
       status: Status.fromString(map['status'] as String?),
+      startH: map['startH'] as num,
+      startM: map['startM'] as num,
+      endH: map['endH'] as num,
+      endM: map['endM'] as num,
     );
   }
 
@@ -205,6 +245,10 @@ class BookingData extends BaseNotificationData with EquatableMixin {
       month: map['month'] as int,
       day: map['day'] as int,
       status: Status.fromString(map['status'] as String?),
+      startH: map['startH'] as num,
+      startM: map['startM'] as num,
+      endH: map['endH'] as num,
+      endM: map['endM'] as num,
     );
   }
 
@@ -228,6 +272,10 @@ class BookingData extends BaseNotificationData with EquatableMixin {
       month,
       day,
       status,
+      startH,
+      startM,
+      endH,
+      endM,
     ];
   }
 
